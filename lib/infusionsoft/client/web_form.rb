@@ -5,7 +5,7 @@ module Infusionsoft
     module WebForm
       # This retrieves the web form names and Id numbers from the application. 
       def web_form_get_map()
-        response = get('WebFormService.getMap', '')
+        response = get('WebFormService.getMap')
       end
 
       # This retrieves the HTML for the given web form.
