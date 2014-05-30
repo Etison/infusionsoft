@@ -15,7 +15,12 @@ module Infusionsoft
       client.http_header_extra = {'User-Agent' => user_agent}
       begin
         api_logger.info "CALL: #{service_call} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
-        result = client.call("#{service_call}", api_key, *args)
+        if *args.blank?
+          # support for webformservice
+          result = client.call("#{service_call}", api_key)
+        else
+          result = client.call("#{service_call}", api_key, *args)
+        end
         if result.nil?; ok_to_retry('nil response') end
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
