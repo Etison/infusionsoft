@@ -3,6 +3,7 @@ A Ruby wrapper for the Infusionsoft API
 
 **update notes**
 
+* v1.1.9 - Remove logger containing sensitive credit card information.
 * v1.1.8 - Added a default user-agent in the headers. Also, give the
   ability to set your own user-agent in the config block.
 * v1.1.5 - Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified. To add logger specify `api_logger` in your [config block](#setup--configuration).
@@ -101,4 +102,3 @@ time of a major release, support for that Ruby version may be dropped.
 Copyright (c) 2014 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
-
